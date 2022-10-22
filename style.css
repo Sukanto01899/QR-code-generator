@@ -1,0 +1,164 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+body {
+  height: 100vh;
+  background-color: coral;
+}
+.container {
+  width: 60%;
+  background-color: white;
+  border-radius: 7px;
+}
+.container h1 {
+  font-size: 24px;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  text-align: center;
+}
+.container main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container main .data-input {
+  flex-basis: 50%;
+  padding-left: 14px;
+}
+.container .data-input textarea {
+  width: 90%;
+  resize: none;
+  border-radius: 7px;
+  outline: none;
+  padding: 0.4rem;
+  border: 1px solid coral;
+  font-size: 16px;
+}
+.customization h2 {
+  text-align: left;
+  margin: 1rem 0 0.5rem 0;
+  font-size: 18px;
+}
+.customization article {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.customization article input {
+  padding: 8px;
+  cursor: pointer;
+  background-color: #ccffcc;
+  vertical-align: middle;
+}
+.customization article label:first-child {
+  background-color: #ffd6cc;
+}
+.customization article label:nth-child(2) {
+  background-color: #cce0ff;
+}
+.customization article label:nth-child(3) {
+  background-color: #ffffcc;
+}
+.customization article label:nth-child(4) {
+  background-color: #ccffcc;
+}
+.customization article label:last-child {
+  background-color: #ccccff;
+}
+.customization .color input {
+  width: 50%;
+  outline: none;
+  border: none;
+}
+.data-input button {
+  width: 180px;
+  height: 40px;
+  margin: 1.5rem 0;
+  background-color: coral;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 7px;
+}
+
+/* Get QR Code */
+.container main .qr-code {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.container main .qr-code .img {
+  background-color: #ccffcc;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+.container main .qr-code .img img {
+  width: 100%;
+  object-fit: contain;
+}
+.container main .qr-code button {
+  width: 120px;
+  height: 30px;
+  margin-top: 1.5rem;
+  background-color: coral;
+  color: white;
+  border: none;
+}
+.qr-code .loading::after {
+  content: "";
+  position: absolute;
+  right: 130px;
+  background-color: coral;
+  width: 200px;
+  height: 0px;
+  transition: 1s;
+  opacity: 0;
+  animation: animate 1s ease normal infinite;
+}
+@keyframes animate {
+  0% {
+    height: 0px;
+    opacity: 0.1;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.4;
+  }
+  100% {
+    height: 200px;
+    opacity: 0.5;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .container {
+    width: 100%;
+  }
+  .container main {
+    flex-direction: column;
+    width: 100%;
+  }
+  .container main .data-input {
+    width: 100%;
+    text-align: center;
+  }
+}

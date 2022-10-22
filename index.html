@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>QR Code Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Qr Code Generator</h1>
+      <main>
+        <!-- Cutomization -->
+        <section class="data-input">
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="3"
+            placeholder="Enter text, url or number"
+          ></textarea>
+          <div class="customization">
+            <h2>Choose Background Color</h2>
+            <article id="bg-color-set">
+              <label for="ffd6cc"
+                ><input
+                  id="ffd6cc"
+                  type="radio"
+                  value="#ffd6cc"
+                  name="bg-color"
+                />
+                #ffd6cc</label
+              >
+              <label for="cce0ff"
+                ><input
+                  id="cce0ff"
+                  type="radio"
+                  value="#cce0ff"
+                  name="bg-color"
+                />
+                #cce0ff</label
+              >
+              <label for="ffffcc"
+                ><input
+                  id="ffffcc"
+                  type="radio"
+                  value="#ffffcc"
+                  name="bg-color"
+                />
+                #ffffcc</label
+              >
+              <label for="ccffcc"
+                ><input
+                  id="ccffcc"
+                  type="radio"
+                  value="#ccffcc"
+                  name="bg-color"
+                />
+                #ccffcc</label
+              >
+              <label for="ccccff"
+                ><input
+                  id="ccccff"
+                  type="radio"
+                  value="#ccccff"
+                  name="bg-color"
+                />
+                #ccccff</label
+              >
+            </article>
+            <div class="color">
+              <h2>Choose color</h2>
+              <input type="color" name="" id="" />
+            </div>
+          </div>
+
+          <button id="generate">Generate</button>
+        </section>
+        <!-- Get QR Code -->
+        <section class="qr-code">
+          <div class="img">
+            <img src="" alt="" />
+          </div>
+          <button>Downlode</button>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
