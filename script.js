@@ -3,10 +3,12 @@ colorInput = document.querySelector('.color input[type="color"]'),
 generateBtn = document.getElementById('generate'),
 imgBox  = document.querySelector('.qr-code .img'),
 image = document.querySelector('.qr-code .img img'),
-textField = document.querySelector('.data-input textarea');
+textField = document.querySelector('.data-input textarea'),
+downlodeBtn = document.querySelector('.qr-code #downlode a')
 const [ffd6cc, cce0ff, ffffcc, ccffcc, ccccff]  = document.querySelectorAll('#bg-color-set label input');
 let bgColor = 'ffffff';
-let color = '000000'
+let color = '000000';
+let downloadUrl;
 
 bgColorPlate.addEventListener('click', ()=>{
     if(ffd6cc.checked){
@@ -27,11 +29,14 @@ colorInput.addEventListener('change', ()=>{
 })
 
 const fetchRquest = async (value, color, bgColor)=>{
-    const url = `https://api.qrserver.com/v1/create-qr-code/?data=${value}&size=200x200&color=${color}&bgcolor=${bgColor}&margin=10`
+    const url = `https://api.qrserver.com/v1/create-qr-code/?data=${value}&size=200x200&color=${color}&bgcolor=${bgColor}&margin=10&format=png`
     const data = await fetch(url);
+    console.log(data)
     generateBtn.innerText= 'Generate';
     generateBtn.removeAttribute('disabled')
     imgBox.classList.remove('loading')
+    downloadUrl = data.url
+    downlodeBtn.href = data.url
     image.src = data.url
 };
 
@@ -42,3 +47,4 @@ generateBtn.addEventListener('click', ()=>{
     imgBox.classList.add('loading')
     fetchRquest(textField.value, color, bgColor)
 })
+

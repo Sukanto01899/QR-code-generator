@@ -115,8 +115,11 @@ body {
   height: 30px;
   margin-top: 1.5rem;
   background-color: coral;
-  color: white;
   border: none;
+}
+.container main .qr-code button a {
+  color: white;
+  text-decoration: none;
 }
 .qr-code .loading::after {
   content: "";
